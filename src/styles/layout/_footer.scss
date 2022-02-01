@@ -1,0 +1,35 @@
+.footer {
+    border-top: solid 1px $color-grey-medium;
+    background-color: $color-light;
+    &__wrapper {
+        height: 110px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 12px;
+        @include tablet {
+            height: 60px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 40px;
+        }
+        @include desktop {
+            width: 944px;
+            margin: 0 auto;
+        }
+    }
+    &__text {
+        font-size: 14px;
+        color: $color-grey;
+        opacity: 0.5;
+    }
+    &__link {
+        line-height: 0;
+    }
+    &__img {
+        width: 103px;
+        height: 40px;
+    }
+}

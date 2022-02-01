@@ -1,0 +1,19 @@
+.header {
+    &__wrapper {
+        height: 111px;
+        display: flex;
+        align-items: center;
+        margin-left: 40px;
+        @include desktop {
+            width: 944px;
+            margin: 0 auto;
+        }
+    }
+    &__link {
+        line-height: 0;
+    }
+    &__img {
+        width: 250px;
+        height: 50px;
+    }
+}

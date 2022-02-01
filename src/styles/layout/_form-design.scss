@@ -1,0 +1,61 @@
+.design {
+    &__text {
+        text-transform: uppercase;
+        font-size: 14px;
+        color: $color-grey-dark;
+    }
+    &__option {
+        display: flex;
+        align-items: flex-start;
+    }
+    &__input {
+        height: 25px;
+    }
+    &__label {
+        margin-bottom: 20px;
+    }
+    &__list {
+        display: flex;
+        margin-left: 10px;
+    }
+    &__color {
+        width: 30px;
+        height: 25px;
+    }
+}
+
+.palette1 {
+    &--color1 {
+        background-color: $color-green-dark;
+    }
+    &--color2 {
+        background-color: $color-green;
+    }
+    &--color3 {
+        background-color: $color-green-light;
+    }
+}
+
+.palette2 {
+    &--color1 {
+        background-color: $color-passion-red;
+    }
+    &--color2 {
+        background-color: $color-rusty-red;
+    }
+    &--color3 {
+        background-color: $color-tomato;
+    }
+}
+
+.palette3 {
+    &--color1 {
+        background-color: $color-blue-green;
+    }
+    &--color2 {
+        background-color: $color-orange-light;
+    }
+    &--color3 {
+        background-color: $color-grey-blue-light;
+    }
+}
