@@ -99,6 +99,8 @@ function App() {
       palette: "1",
     });
     setPaletteClass("--palette1");
+    setImgInfo("");
+    
   };
 
   const handleImage = (data) => {
