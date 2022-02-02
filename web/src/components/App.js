@@ -9,6 +9,7 @@ import Landing from "./Landing";
 import Form from "./Form";
 import Footer from "./Footer";
 import ls from "../services/localStorage";
+import Api from "../services/Api";
 
 function App() {
   const [paletteClass, setPaletteClass] = useState(
@@ -100,11 +101,22 @@ function App() {
     });
     setPaletteClass("--palette1");
     setImgInfo("");
-    
   };
 
-  const handleImage = (data) => {
-    setImgInfo(data);
+  const handleImage = (dataImg) => {
+    setImgInfo(dataImg);
+    setData({
+      ...data,
+      ["photo"]: dataImg,
+    });
+  };
+
+  const handlerClickShare = (ev) => {
+    ev.preventDefault();
+
+    const dataFetch = Api.Api(data);
+
+    console.log(dataFetch);
   };
 
   return (
@@ -136,6 +148,7 @@ function App() {
             shareClass={shareClass}
             imgInfo={imgInfo}
             handleImage={handleImage}
+            handlerClickShare={handlerClickShare}
           />
         </Route>
       </Switch>

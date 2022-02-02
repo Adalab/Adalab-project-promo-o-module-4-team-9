@@ -247,7 +247,7 @@ const Form = (props) => {
                 <button
                   className="js-shareBtn share__button share__button--disabled"
                   type="submit"
-                  disabled
+                  onClick={props.handlerClickShare}
                 >
                   <i className="far fa-address-card"></i>Crear tarjeta
                 </button>
