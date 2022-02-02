@@ -245,9 +245,28 @@ const Form = (props) => {
             >
               <div className="share__main">
                 <button
-                  className="js-shareBtn share__button share__button--disabled"
+                  className={`js-shareBtn share__button ${
+                    props.data.name === "" ||
+                    props.data.job === "" ||
+                    props.data.email === "" ||
+                    props.data.linkedin === "" ||
+                    props.data.github === "" ||
+                    props.data.photo === ""
+                      ? "share__button--disabled"
+                      : null
+                  }`}
                   type="submit"
                   onClick={props.handlerClickShare}
+                  disabled={
+                    props.data.name === "" ||
+                    props.data.job === "" ||
+                    props.data.email === "" ||
+                    props.data.linkedin === "" ||
+                    props.data.github === "" ||
+                    props.data.photo === ""
+                      ? true
+                      : false
+                  }
                 >
                   <i className="far fa-address-card"></i>Crear tarjeta
                 </button>

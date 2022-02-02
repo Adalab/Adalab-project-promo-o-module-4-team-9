@@ -149,6 +149,7 @@ function App() {
             imgInfo={imgInfo}
             handleImage={handleImage}
             handlerClickShare={handlerClickShare}
+            data={data}
           />
         </Route>
       </Switch>
