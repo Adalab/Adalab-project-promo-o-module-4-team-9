@@ -1,3 +1,5 @@
+let link = "";
+
 function Api(data) {
   return fetch("//localhost:3001/card", {
     method: "POST",
@@ -6,13 +8,13 @@ function Api(data) {
   })
     .then((response) => response.json())
     .then((dataApi) => {
-      console.log(dataApi);
-      return dataApi;
+      return (link = dataApi);
     });
 }
-
+console.log(link);
 const objToExport = {
   Api: Api,
+  link: link,
 };
 
 export default objToExport;
