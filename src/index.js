@@ -9,7 +9,8 @@ const server = express();
 
 // Configuramos el servidor
 server.use(cors());
-server.use(express.json());
+server.use(express.json({limit: "50mb"}));
+
 
 // Arrancamos el servidor en el puerto 3000
 const serverPort = 3001;
@@ -28,6 +29,22 @@ server.post("/card", (req, res) => {
     success: false,
     error: "Error description",
   };
-
-  res.json(responseSuccess);
+  if (
+    req.body.name !== "" &&
+    req.body.job !== "" &&
+    req.body.photo !== "" &&
+    req.body.email !== "" &&
+    req.body.linkedin !== "" &&
+    req.body.github !== ""
+  ) {
+    res.json(responseSuccess);
+  } else {
+    res.json(responseError);
+  }
 });
+
+//ruta para mostrar la tarjeta:
+server.get("/card/${cardId}", (req, res) =>{
+res.json(response)
+
+})

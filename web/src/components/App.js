@@ -14,6 +14,7 @@ import Api from "../services/Api";
 function App() {
   const [paletteClass, setPaletteClass] = useState(
     ls.get("class", "--palette1")
+
   );
   const [desingArrow, setDesingArrow] = useState(false);
   const [formArrow, setFormArrow] = useState(true);
@@ -21,7 +22,10 @@ function App() {
   const [formClass, setFormClass] = useState(true);
   const [shareClass, setShareClass] = useState(true);
   const [desingClass, setDesingClass] = useState(false);
-  const [imgInfo, setImgInfo] = useState("");
+  const [imgInfo, setImgInfo] = useState(ls.get("image", ""));
+
+  //crea la link: back to front:
+  const [card, setCard] = useState("");
 
   const [data, setData] = useState(
     ls.get("data", {
@@ -39,6 +43,7 @@ function App() {
   useEffect(() => {
     ls.set("data", data);
     ls.set("class", paletteClass);
+    ls.set("image", imgInfo);
   }, [data, paletteClass]);
 
   const handleCollapsable = (ev) => {
@@ -115,17 +120,17 @@ function App() {
     ev.preventDefault();
 
     const dataFetch = Api.Api(data);
-
-    console.log(dataFetch);
+    // setCard(dataApi.cardURL);
   };
+  console.log(Api.Api(data).cardURL);
 
   return (
-    <div className="App">
+    <div className='App'>
       <Switch>
-        <Route exact path="/">
+        <Route exact path='/'>
           <Landing />
         </Route>
-        <Route exact path="/create-preview-card">
+        <Route exact path='/create-preview-card'>
           <Header />
           <Form
             handlerSubmit={handlerSubmit}

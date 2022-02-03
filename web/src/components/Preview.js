@@ -24,7 +24,7 @@ const Preview = (props) => {
         <div
           className="cards__image js__profile-image"
           style={
-            props.imgInfo === ""
+            props.imgInfo === ""  
               ? { backgroundImage: `url(${defaultImg})` }
               : { backgroundImage: `url(${props.imgInfo})` }
           }
