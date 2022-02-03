@@ -11,6 +11,11 @@ const server = express();
 server.use(cors());
 server.use(express.json({limit: "50mb"}));
 
+// Configuración servidor estático:
+
+const staticServerPath = "./public-react";
+server.use(express.static(staticServerPath));
+
 
 // Arrancamos el servidor en el puerto 3000
 const serverPort = 3001;

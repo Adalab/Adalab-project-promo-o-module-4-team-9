@@ -14,7 +14,6 @@ import Api from "../services/Api";
 function App() {
   const [paletteClass, setPaletteClass] = useState(
     ls.get("class", "--palette1")
-
   );
   const [desingArrow, setDesingArrow] = useState(false);
   const [formArrow, setFormArrow] = useState(true);
@@ -120,17 +119,16 @@ function App() {
     ev.preventDefault();
 
     const dataFetch = Api.Api(data);
-    // setCard(dataApi.cardURL);
+    console.log(Api.Api.dataApi);
   };
-  console.log(Api.Api(data).cardURL);
 
   return (
-    <div className='App'>
+    <div className="App">
       <Switch>
-        <Route exact path='/'>
+        <Route exact path="/">
           <Landing />
         </Route>
-        <Route exact path='/create-preview-card'>
+        <Route exact path="/create-preview-card">
           <Header />
           <Form
             handlerSubmit={handlerSubmit}
