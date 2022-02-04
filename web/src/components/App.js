@@ -9,7 +9,7 @@ import Landing from "./Landing";
 import Form from "./Form";
 import Footer from "./Footer";
 import ls from "../services/localStorage";
-import Api from "../services/Api";
+import callToApi from "../services/Api";
 
 function App() {
   const [paletteClass, setPaletteClass] = useState(
@@ -117,9 +117,16 @@ function App() {
 
   const handlerClickShare = (ev) => {
     ev.preventDefault();
+    callToApi(data).then((dataApi) => {
+      
+      setCard(dataApi.cardURL);
+      console.log(card);
+    });
+   
 
-    const dataFetch = Api.Api(data);
-    console.log(Api.Api.dataApi);
+    // const dataFetch = Api.callToApi(data);
+    // console.log(dataFetch);
+    
   };
 
   return (
@@ -153,6 +160,7 @@ function App() {
             handleImage={handleImage}
             handlerClickShare={handlerClickShare}
             data={data}
+            card={card}
           />
         </Route>
       </Switch>

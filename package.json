@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Adalab/project-promo-o-module-4-team-9#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "ejs": "^3.1.6",
     "express": "^4.17.2"
   }
 }

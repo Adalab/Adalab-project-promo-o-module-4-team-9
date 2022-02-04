@@ -11,6 +11,10 @@ const server = express();
 server.use(cors());
 server.use(express.json({limit: "50mb"}));
 
+// motor de plantillas
+server.set("view engine", "ejs"); 
+
+
 // Configuración servidor estático:
 
 const staticServerPath = "./public-react";
@@ -25,6 +29,7 @@ server.listen(serverPort, () => {
 
 // Escribimos los endpoints que queramos
 server.post("/card", (req, res) => {
+  const data = req.body;
   const responseSuccess = {
     success: true,
     cardURL: "http://localhost:4000/card/${cardId}",
@@ -35,12 +40,12 @@ server.post("/card", (req, res) => {
     error: "Error description",
   };
   if (
-    req.body.name !== "" &&
-    req.body.job !== "" &&
-    req.body.photo !== "" &&
-    req.body.email !== "" &&
-    req.body.linkedin !== "" &&
-    req.body.github !== ""
+    data.name !== "" &&
+    data.job !== "" &&
+    data.photo !== "" &&
+    data.email !== "" &&
+    data.linkedin !== "" &&
+    data.github !== ""
   ) {
     res.json(responseSuccess);
   } else {
@@ -49,7 +54,8 @@ server.post("/card", (req, res) => {
 });
 
 //ruta para mostrar la tarjeta:
-server.get("/card/${cardId}", (req, res) =>{
-res.json(response)
+server.get("/card/:cardId", (req, res) =>{
+
+res.render("created-card")
 
 })

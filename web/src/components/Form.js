@@ -272,18 +272,20 @@ const Form = (props) => {
                 </button>
               </div>
 
-              <div className="js-shareDone share__done hidden">
+              <div className={`js-shareDone share__done ${props.card === "" ? "hidden" : "null"}`}>
                 <p className="share__text">La tarjeta ha sido creada:</p>
                 <a
                   className="js-shareLink share__link"
-                  href="./#"
+                  href={props.card}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Your URL will be placed here!
+                  {props.card}
                 </a>
                 <a
                   className="share__button share__button--twitter js-shareTwitter"
-                  href="./#"
+                  href={props.card}
                 >
                   <i className="fab fa-twitter"></i>Compartir en twitter
                 </a>
