@@ -1,0 +1,157 @@
+.cards {
+    background: linear-gradient(#bfcdd0, #dde9ed);
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+        width: 50%;
+        border-radius: 6px;
+        margin-left: 30px;
+        min-height: calc(100vh - 212px);
+    }
+    @include desktop {
+        width: 585px;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+    &__button {
+        &--reset {
+            display: flex;
+            align-items: center;
+            width: 75px;
+            height: 30px;
+            border-radius: 15px;
+            font-size: 12px;
+            line-height: 20px;
+            color: $color-grey-dark;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid $color-light;
+            padding: 0 10px;
+            background: none;
+            .fa-trash-alt {
+                margin-right: 8px;
+            }
+            &:hover {
+                background-color: $color-green;
+                color: $color-light;
+                border: none;
+            }
+        }
+    }
+    &__article {
+        width: 240px;
+        height: 326px;
+        background-color: $color-light;
+        margin-top: 20px;
+        border-radius: 2px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    &__wrapper {
+        &--palette1 {
+            border-left: 5px solid $color-green;
+        }
+        &--palette2 {
+            border-left: 5px solid $color-rusty-red;
+        }
+        &--palette3 {
+            border-left: 5px solid $color-orange-light;
+        }
+    }
+    &__title {
+        font-family: $font-tertiary;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 20px;
+        padding-left: 15px;
+        margin-bottom: 4px;
+        margin-top: 20px;
+        margin-right: 20px;
+        overflow: hidden;
+        height: 20px;
+        text-transform: capitalize;
+        white-space: nowrap;
+        &--palette1 {
+            color: $color-green-dark;
+        }
+        &--palette2 {
+            color: $color-passion-red;
+        }
+        &--palette3 {
+            color: $color-blue-green;
+        }
+    }
+    &__subtitle {
+        color: $color-grey-dark;
+        font-family: $font-tertiary;
+        font-size: 16px;
+        line-height: 20px;
+        padding-left: 15px;
+        margin-bottom: 10px;
+        margin-right: 20px;
+        overflow: hidden;
+        height: 20px;
+        text-transform: capitalize;
+        white-space: nowrap;
+        &--palette1 {
+            color: $color-green-dark;
+        }
+        &--palette2 {
+            color: $color-passion-red;
+        }
+        &--palette3 {
+            color: $color-blue-green;
+        }
+    }
+    &__image {
+        width: 240px;
+        height: 200px;
+        background: url('../images/profile-image.svg');
+        background-size: cover;
+        background-position: center;
+    }
+    &__contact {
+        display: flex;
+        margin: 10px 20px;
+    }
+    &__item {
+        margin-right: 10px;
+    }
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+        &--palette1 {
+            border: 2px solid $color-green-light;
+            color: $color-green-dark;
+            &:hover {
+                background-color: $color-green-light;
+                color: $color-green-dark;
+            }
+        }
+        &--palette2 {
+            border: 2px solid $color-tomato;
+            color: $color-rusty-red;
+            &:hover {
+                background-color: $color-tomato;
+                color: $color-rusty-red;
+            }
+        }
+        &--palette3 {
+            border: 2px solid $color-grey-blue-light;
+            color: $color-grey-dark;
+            &:hover {
+                background-color: $color-grey-blue-light;
+                color: $color-grey-dark;
+            }
+        }
+    }
+}

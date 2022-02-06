@@ -54,7 +54,7 @@ server.post("/card", (req, res) => {
 });
 
 //ruta para mostrar la tarjeta:
-server.get("/card/:cardId", (req, res) =>{
+server.get("/card/1", (req, res) =>{
 
 res.render("created-card")
 
