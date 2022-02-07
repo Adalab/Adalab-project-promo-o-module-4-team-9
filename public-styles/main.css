@@ -1,5 +1,5 @@
 .cards {
-  background: red;
+  background: linear-gradient(#bfcdd0, #dde9ed);
   padding: 40px 0;
   display: flex;
   justify-content: center;
