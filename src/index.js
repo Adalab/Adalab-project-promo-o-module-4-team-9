@@ -20,8 +20,11 @@ server.set("view engine", "ejs");
 const staticServerPath = "./public-react";
 server.use(express.static(staticServerPath));
 
+const staticStylesPath = "./public-styles";
+server.use(express.static(staticStylesPath));
+
 // Arrancamos el servidor en el puerto 3000
-const serverPort = 3001;
+const serverPort = process.env.PORT || 3001;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
