@@ -77,6 +77,19 @@ insertStmt.run (newCardData.cardId, newCardData.palette, newCardData.name, newCa
 server.get("/card/:cardId", (req, res) => {
   const reqParamsId = req.params.cardId;
   console.log(reqParamsId);
-  const cardData = {};
+
+  const query = db.prepare('SELECT * FROM cards WHERE uuid = ?')
+  const foundCard = query.get(reqParamsId);
+  const cardData = {
+    name: foundCard.name,
+    job: foundCard.job,
+    photo: foundCard.photo,
+    email: foundCard.email,
+    phone: foundCard.phone,
+    linkedin: foundCard.linkedin,
+    github: foundCard.github,
+    palette: foundCard.palette,
+
+  };
   res.render("created-card", cardData);
 });
