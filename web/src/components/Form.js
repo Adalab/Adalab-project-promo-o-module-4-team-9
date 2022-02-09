@@ -285,7 +285,7 @@ const Form = (props) => {
                 </a>
                 <a
                   className="share__button share__button--twitter js-shareTwitter"
-                  href={props.card}
+                  href={`https://twitter.com/intent/tweet?text=He%20creado%20mi%20tarjeta%20de%20visita%20gracias%20a%20%23TeamUndefined:%20${props.card}`}
                 >
                   <i className="fab fa-twitter"></i>Compartir en twitter
                 </a>
