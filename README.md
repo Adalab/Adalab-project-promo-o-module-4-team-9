@@ -62,7 +62,7 @@ Ambas páginas tienen un diseño responsive:
 
 - <h3>Migración a react</h3>
 
-  - **Primero paso. Análisis del proyecto**
+  - **Primer paso. Análisis del proyecto**
 
   - **Segundo paso. Maquetación con React de la página de la herramienta**
 
@@ -72,7 +72,7 @@ Ambas páginas tienen un diseño responsive:
 
 - <h3>Servidores</h3>
 
-  - **Primero paso. API**
+  - **Primer paso. API**
 
   - **Segundo paso. Servidor de estáticos**
 
