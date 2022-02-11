@@ -1,6 +1,6 @@
 const callToApi = (data) => {
   return fetch(
-    "https://undefined-awesome-cards.herokuapp.com/#/create-preview-card/card",
+    "//undefined-awesome-cards.herokuapp.com/#/create-preview-card/card",
     {
       method: "POST",
       body: JSON.stringify(data),
