@@ -29,9 +29,7 @@ const db = new Database("./src/db/newcards.db", { verbose: console.log });
 
 // Arrancamos el servidor en el puerto 3000
 const serverPort = process.env.PORT || 3001;
-server.listen(serverPort, () => {
-  console.log(`Server listening at http://localhost:${serverPort}`);
-});
+server.listen(serverPort, () => {});
 
 const savedCards = [];
 
@@ -48,7 +46,7 @@ server.post("/card", (req, res) => {
 
   const responseSuccess = {
     success: true,
-    cardURL: `http://undefined-awesome-cards.herokuapp.com/#/create-preview-card/card/${newCardData.cardId}`,
+    cardURL: `http://undefined-awesome-cards.herokuapp.com/card/${newCardData.cardId}`,
   };
 
   const responseError = {
