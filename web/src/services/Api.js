@@ -1,7 +1,7 @@
 const callToApi = (data) => {
   const serverUrl =
     process.env.NODE_ENV === "production"
-      ? "https://undefined-awesome-cards.herokuapp.com/#/create-preview-card"
+      ? "https://undefined-awesome-cards.herokuapp.com"
       : "http://localhost:3001";
   return fetch(`${serverUrl}/card`, {
     method: "POST",
